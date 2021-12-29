@@ -1,7 +1,10 @@
 window.onload = iniciar;
+let inputFecha = document.getElementById("inputFecha");
+inputFecha.max = new Date().toISOString().substring(0, 10);
 function iniciar() {
     const btnCargar = document.getElementById("btnCargar");
     btnCargar.addEventListener("click", clickBtn)
+
 
 
 }
@@ -24,15 +27,15 @@ async function clickBtn() {
 
     let estadisticas = datosJson.dates[fechaSeleccionada].countries[paisSeleccionado];
 
-    document.getElementById("today_confirmed").innerText = estadisticas.today_confirmed;
-    document.getElementById("today_deaths").innerText = estadisticas.today_deaths
-    document.getElementById("today_intensive_care").innerText = estadisticas.today_intensive_care
-    document.getElementById("today_new_confirmed").innerText = estadisticas.today_new_confirmed
-    document.getElementById("today_new_deaths").innerText = estadisticas.today_new_deaths
-    document.getElementById("today_new_intensive_care").innerText = estadisticas.today_new_intensive_care
-    document.getElementById("today_new_open_cases").innerText = estadisticas.today_new_open_cases
-    document.getElementById("today_new_recovered").innerText = estadisticas.today_new_recovered
-    document.getElementById("today_new_total_hospitalised_patients").innerText = today_new_total_hospitalised_patients.today_confirmed == null ? 0 : today_new_total_hospitalised_patients.today_confirmed
-    document.getElementById("today_open_cases").innerText = estadisticas.today_open_cases
-    document.getElementById("source").innerText = estadisticas.source;
+    document.getElementById("today_confirmed").innerText = estadisticas.today_confirmed ??= "0";
+    document.getElementById("today_deaths").innerText = estadisticas.today_deaths ??= "0";
+    document.getElementById("today_intensive_care").innerText = estadisticas.today_intensive_care ??= "0";
+    document.getElementById("today_new_confirmed").innerText = estadisticas.today_new_confirmed ??= "0";
+    document.getElementById("today_new_deaths").innerText = estadisticas.today_new_deaths ??= "0";
+    document.getElementById("today_new_intensive_care").innerText = estadisticas.today_new_intensive_care ??= "0";
+    document.getElementById("today_new_open_cases").innerText = estadisticas.today_new_open_cases ??= "0";
+    document.getElementById("today_new_recovered").innerText = estadisticas.today_new_recovered ??= "0";
+    document.getElementById("today_new_total_hospitalised_patients").innerText = today_new_total_hospitalised_patients.today_confirmed ??= "0";
+    document.getElementById("today_open_cases").innerText = estadisticas.today_open_cases ??= "0";
+    document.getElementById("source").innerText = estadisticas.source ??= "0";
 }
