@@ -10,17 +10,20 @@
   <body>
     <h1>Estadísticas del Covid19</h1>
     <div class="container">
-      <label>Fecha:</label><input type="date" id="inputFecha" />
-      <label>País</label>
-      <select id="selectPais">
-        <option value="Spain">España</option>
-        <option value="France">Francia</option>
-        <option value="Germany">Alemania</option>
-        <option value="Italy">Italia</option>
-        <option value="Poland">Polonia</option>
-      </select>
-      <button id="btnCargar">Cargar estadísticas</button>
-      <br />
+      <div class="selectores">
+        <label>Fecha:</label
+        ><input type="date" value="2021-12-25" id="inputFecha" />
+        <label>País</label>
+        <select id="selectPais">
+          <option value="Spain">España</option>
+          <option value="France">Francia</option>
+          <option value="Germany">Alemania</option>
+          <option value="Italy">Italia</option>
+          <option value="Poland">Polonia</option>
+        </select>
+        <button id="btnCargar">Cargar estadísticas</button>
+      </div>
+
       <div class="datos">
         <ul>
           <li>Confirmado: <span id="today_confirmed"></span></li>
@@ -40,6 +43,7 @@
             <span id="today_new_total_hospitalised_patients"></span>
           </li>
           <li>Casos abiertos hoy: <span id="today_open_cases"></span></li>
+          <cite>Fuente de los datos: <span id="source"></span></cite>
         </ul>
       </div>
     </div>
